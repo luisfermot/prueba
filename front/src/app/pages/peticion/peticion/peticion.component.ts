@@ -21,14 +21,14 @@ export class PeticionComponent implements OnInit {
 
   
   sendMessage(){
-    this.http.get('http://localhost/wordpress/back/wp-json/wp/v2/posts/').subscribe(resultado=>{
-      for (let clave in resultado) {
-        if(resultado.hasOwnProperty(clave)){
-          this.posts.push(resultado[clave]);
+      this.http.get('http://localhost/wordpress/back/wp-json/wp/v2/comments').subscribe(resultado=>{
+        for (let clave in resultado) {
+          if(resultado.hasOwnProperty(clave)){
+            this.posts.push(resultado[clave]);
+          }
         }
-      }
-      console.log(this.posts);
-    }); 
+        console.log(this.posts);
+      }); 
     this.posts=[];
 
   }

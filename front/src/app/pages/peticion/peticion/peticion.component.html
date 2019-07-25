@@ -1,7 +1,13 @@
 <div class="container">
-    <h2 *ngFor="let titulos of posts">
-        {{titulos.title.rendered}}
-    </h2>
+    <div class="card" *ngFor="let titulos of posts">
+        <div class="card-head">
+            {{titulos.id}}
+            {{titulos.author_name}}
+        </div>
+        <div class="card-body">
+            {{titulos.content.rendered}}
+        </div>
+    </div>
     <button class="btn btn-primary" (click)="sendMessage()"></button>
 
 </div>
